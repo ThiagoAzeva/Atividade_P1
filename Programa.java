@@ -101,9 +101,19 @@ public static  List<Estudante> estudantes = new ArrayList<>();
 	System.out.println("Digite o numero de Identificação(ID) do Aluno / Aluna:");
 	int id = sc.nextInt();	
 	sc.nextLine();//Consume newline
-	
-	
-	
+	boolean replica = false;
+	for(Estudante estudante : estudantes) {
+		if(id == estudante.getIdEstudante() ) {
+		
+		replica = true;
+		break;
+		}
+	}
+	if(replica) {
+		System.out.println("ID já cadastrada");
+		System.out.println("--------------");
+		return;	
+	}
 	System.out.println("Digite o Primeiro Nome do Aluno / Aluna:");
 	String nome = sc.nextLine();	
 	
