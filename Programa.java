@@ -92,7 +92,7 @@ import java.util.Scanner;
 }
 
 public class Programa  {
-public List<Estudante> estudantes = new ArrayList<>();
+public static  List<Estudante> estudantes = new ArrayList<>();
 	
 	//Metodo para cadastro de novos alunos
 	public void cadastrarAluno() {
@@ -101,6 +101,8 @@ public List<Estudante> estudantes = new ArrayList<>();
 	System.out.println("Digite o numero de Identificação(ID) do Aluno / Aluna:");
 	int id = sc.nextInt();	
 	sc.nextLine();//Consume newline
+	
+	
 	
 	System.out.println("Digite o Primeiro Nome do Aluno / Aluna:");
 	String nome = sc.nextLine();	
@@ -156,7 +158,7 @@ public List<Estudante> estudantes = new ArrayList<>();
 		System.out.println("Aluno/Aluna nao encontrado/a.");
 	}
 	else {
-		for(Estudante estudante : estudantes) {
+		for(Estudante estudante : aluno) {
 			System.out.println(estudante.mostrarCompleto());
 		}
 	}
@@ -165,6 +167,20 @@ public List<Estudante> estudantes = new ArrayList<>();
 
 	public static void main(String[] args) {
 		Programa aluno = new Programa();
+		Estudante aluno1 = new Estudante(1, "Josefina", "ADM", 24, 2020);
+		Estudante aluno2 = new Estudante(2, "Mario", "Direito", 22, 2020);
+		Estudante aluno3 = new Estudante(3, "Paula", "ADM", 24, 2022);
+		Estudante aluno4 = new Estudante(4, "Flavia", "Design", 18, 2023);
+		Estudante aluno5 = new Estudante(5, "Jair", "Medicina", 25, 2023);
+		Estudante aluno6 = new Estudante(6, "Luis Inacio", "Artes", 17, 2023);
+		Estudante aluno7 = new Estudante(7, "Claudio", "Gastronomia", 26, 2022);
+		estudantes.add(aluno1);
+		estudantes.add(aluno2);
+		estudantes.add(aluno3);
+		estudantes.add(aluno4);
+		estudantes.add(aluno5);
+		estudantes.add(aluno6);
+		estudantes.add(aluno7);
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Seja Bem vindo!");
