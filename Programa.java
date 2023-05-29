@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
  class Estudante {
-	// atributtos da classe estudante
+	// atributos da classe estudante
 	public int idEstudante;
 	public String nomeEstudante;
 	public String curso;
@@ -22,7 +22,7 @@ import java.util.Scanner;
 	}
 	
 	
-	// metodos get e set
+	// métodos getter e setter
 
 	public int getIdEstudante() {
 		return idEstudante;
@@ -64,7 +64,7 @@ import java.util.Scanner;
 			this.anoDeAdmissao = anoDeAdmissao;
 		}
 		
-	// Metodo Mostrar() Para exibir informação dos alunos
+	// Método "Mostrar" para exibir informação dos alunos
 	public String Mostrar() {
 		StringBuilder p1 = new StringBuilder();
 	p1.append("Aluno/Aluna: ").append(getNomeEstudante()).append(".\n");
@@ -73,38 +73,35 @@ import java.util.Scanner;
 		    p1.append("--------------");
 
 		    return p1.toString();
-		
-	}
-// metodo para mostras todas as informações de um aluno especifico
+		}
+	
+// Método para mostrar todas as informações de um aluno específico
 	public String mostrarCompleto() {
 		StringBuilder p2 = new StringBuilder();
-
-	    p2.append("Aluno/Aluna: ").append(getNomeEstudante()).append(".\n");
+		p2.append("Aluno/Aluna: ").append(getNomeEstudante()).append(".\n");
 	    p2.append("Curso: ").append(getCurso()).append(".\n");
 	    p2.append("Identificação: ").append(getIdEstudante()).append(".\n");
 	    p2.append("Idade: ").append(getIdade()).append(".\n");
 	    p2.append("Ano de Admissão: ").append(getAnoDeAdmissao()).append(".\n");
 	    p2.append("--------------");
-
 	    return p2.toString();
 	}
-	
 }
 
 public class Programa  {
 public static  List<Estudante> estudantes = new ArrayList<>();
 	
-	//Metodo para cadastro de novos alunos
+	//Método para cadastro de novos alunos
 	public void cadastrarAluno() {
 	Scanner sc = new Scanner(System.in);
-	
 	System.out.println("Digite o numero de Identificação(ID) do Aluno / Aluna:");
 	int id = sc.nextInt();	
 	sc.nextLine();//Consume newline
+	
+	//Verificador de id repetido
 	boolean replica = false;
 	for(Estudante estudante : estudantes) {
 		if(id == estudante.getIdEstudante() ) {
-		
 		replica = true;
 		break;
 		}
@@ -114,6 +111,8 @@ public static  List<Estudante> estudantes = new ArrayList<>();
 		System.out.println("--------------");
 		return;	
 	}
+	
+	//Continuação do método de cadastro
 	System.out.println("Digite o Primeiro Nome do Aluno / Aluna:");
 	String nome = sc.nextLine();	
 	
@@ -132,26 +131,23 @@ public static  List<Estudante> estudantes = new ArrayList<>();
 	System.out.println("Cadastro Realizado com sucesso!");
 	System.out.println("--------------");
 	}
-	// Metodo para exibir a lista alunos cadastrados no sistema e exibir uma mensagem caso não haja nenhum
+	// Método para exibir a lista alunos cadastrados no sistema e exibir uma mensagem caso não haja nenhum
 	public void listarAlunos() {
 		
 		System.out.println("Alunos");
 		
 		if (estudantes.isEmpty()) {
-			System.out.println("Nenhum aluno cadastradso.");
+			System.out.println("Nenhum aluno cadastrado.");
 			return;
 		}
-		
-		
-		
 		
 		for(Estudante estudante : estudantes) {
 			System.out.println(estudante.Mostrar());
 		}
-		
-		
+
 	}
-	// metodo que irá permitir visualização de todas as informações de um aluno especifico
+	
+	// Método que irá permitir visualização de todas as informações de um aluno específico
 	public void acharAluno(){
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Digite o ID do aluno/aluna:");
@@ -172,7 +168,6 @@ public static  List<Estudante> estudantes = new ArrayList<>();
 			System.out.println(estudante.mostrarCompleto());
 		}
 	}
-	
 	}
 
 	public static void main(String[] args) {
@@ -192,11 +187,11 @@ public static  List<Estudante> estudantes = new ArrayList<>();
 		estudantes.add(aluno6);
 		estudantes.add(aluno7);
 		Scanner sc = new Scanner(System.in);
-		
 		System.out.println("Seja Bem vindo!");
 		System.out.println("---------------");
 		boolean sair = false;
-		// lista de ações que podem ser executadas no sistema
+		
+		// Lista de ações que podem ser executadas no sistema
 		while(!sair) {
 		System.out.println("Escolha uma das opções a seguir:");
 		System.out.println("Digite (1) Para cadastrar novo aluno/aluna.");
